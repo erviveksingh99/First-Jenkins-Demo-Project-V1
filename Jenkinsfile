@@ -8,8 +8,8 @@ pipeline {
 
         stage('Validate') {
             steps {
-                bat 'if not exist index.html exit 1'
-                echo 'index.html found'
+                bat 'if not exist demo.html exit 1'
+                echo 'demo.html found'
             }
         }
 
@@ -17,7 +17,7 @@ pipeline {
             steps {
                 bat '''
                 if not exist C:\\jenkins-deploy\\html-demo mkdir C:\\jenkins-deploy\\html-demo
-                copy /Y index.html C:\\jenkins-deploy\\html-demo\\index.html
+                copy /Y demo.html C:\\jenkins-deploy\\html-demo\\demo.html
                 '''
             }
         }
